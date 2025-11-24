@@ -11,7 +11,10 @@
       "WebFetch(domain:help.kit.com)",
       "Bash(git add:*)",
       "Bash(git restore:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nAdd landing page for AI4All course\n\n- Next.js 15 with App Router and Tailwind CSS\n- Hero, Problem/Outcome, Course Snapshot, Testimonials, FAQ sections\n- Kit (ConvertKit) form integration for waitlist signup\n- Responsive design with smooth scroll\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd landing page for AI4All course\n\n- Next.js 15 with App Router and Tailwind CSS\n- Hero, Problem/Outcome, Course Snapshot, Testimonials, FAQ sections\n- Kit (ConvertKit) form integration for waitlist signup\n- Responsive design with smooth scroll\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(npm ls:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
