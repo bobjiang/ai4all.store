@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AI 4 All - AI Skills for Teens',
-  description: 'A hands-on introduction to Artificial Intelligence for teenagers. Learn to use AI tools safely and build real projects.',
-  keywords: ['AI course', 'teens', 'artificial intelligence', 'education', 'ChatGPT', 'coding'],
+  title: 'AI 4 All - AI Camp for High School Students',
+  description: 'A 25-hour AI camp for teens (13-18) to master AI fundamentals, experiment with machine learning, and create a portfolio project. Zero coding experience required.',
+  keywords: ['AI camp', 'AI course for teens', 'high school AI program', 'machine learning for teens', 'ChatGPT', 'artificial intelligence education'],
 }
 
 export default function RootLayout({
