@@ -23,10 +23,10 @@ export default function FinalCTA() {
     <section id="waitlist" className="py-20 px-4 bg-blue-600">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-white mb-4">
-          Ready to Get Started?
+          Secure Your Teen's Spot
         </h2>
         <p className="text-blue-100 mb-8">
-          Join our waitlist to be notified when the next cohort opens. Early sign-ups get priority access and special pricing.
+          Limited to 12 students per cohort for personalized attention. Join the waitlist for early access and founding member pricing.
         </p>
 
         {/* ConvertKit Form */}

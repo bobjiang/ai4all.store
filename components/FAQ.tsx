@@ -7,24 +7,28 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Is this course safe for my child?",
-      answer: "Absolutely. We use age-appropriate tools and maintain strict content guidelines. All AI interactions are supervised, and we teach responsible usage practices. Parents receive regular updates on progress.",
+      question: "Does my child need coding experience?",
+      answer: "No prior coding required. We start from zero and teach Python basics using guided Google Colab notebooks. By week 3, students write their own code with support.",
     },
     {
-      question: "Is it all screen time?",
-      answer: "No. While we use computers for AI tools, sessions include discussions, brainstorming, and offline activities. We encourage breaks and balance digital learning with critical thinking exercises.",
+      question: "What's the difference between 5-day camp and 10-week course?",
+      answer: "Same 25-hour curriculum. The intensive camp (5 days, 5 hours/day) is great for school breaks. The 10-week course (2.5 hours/week) allows more time for homework and project development.",
+    },
+    {
+      question: "Will this help with college applications?",
+      answer: "Yes. Students earn a Certificate of Completion and build a portfolio project they can showcase. Admissions officers value demonstrated AI literacy and project-based learning.",
     },
     {
       question: "What if my child is shy or introverted?",
-      answer: "Our small class sizes (8-12 students) create a supportive environment. Participation can be through chat or voice, and we never force anyone to present on camera. Many quiet students thrive in our courses.",
+      answer: "Small class sizes (8-12 students) and team projects (3-4 per group) create a supportive environment. Participation can be via chat, and we use pair programming so no one works alone.",
     },
     {
-      question: "Does my child need coding experience?",
-      answer: "No coding experience required! We focus on understanding AI concepts and using no-code/low-code tools. This course is designed for complete beginners.",
+      question: "Is this safe? What about AI misuse?",
+      answer: "Safety is core to our curriculum. Module 9 is dedicated to AI ethics — bias, privacy, misinformation. We teach responsible use, not just technical skills. Parents receive progress updates.",
     },
     {
       question: "What's your refund policy?",
-      answer: "Full refund within 7 days of the first session if the course isn't the right fit. We also offer rescheduling to a future cohort at no extra cost.",
+      answer: "Full refund within 7 days of the first session. We also offer free rescheduling to a future cohort if timing doesn't work out.",
     },
   ]
 

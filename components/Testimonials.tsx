@@ -1,19 +1,19 @@
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "My daughter went from being intimidated by AI to building her own project. The instructors made everything so accessible.",
-      author: "Parent of 15-year-old",
-      role: "Pilot Cohort",
+      quote: "I was worried about my son using AI for school without understanding it. Now he explains neural networks to ME and knows how to spot AI bias. Worth every penny.",
+      author: "Sarah M.",
+      role: "Parent of 16-year-old",
     },
     {
-      quote: "I finally understand what AI actually is, not just how to use ChatGPT. The ethics discussions were eye-opening.",
-      author: "Student, Age 14",
-      role: "Pilot Cohort",
+      quote: "I built an image classifier that detects recyclables vs trash for my final project. I went from zero coding to writing Python in 3 weeks. Can't wait to add it to my college apps.",
+      author: "Alex",
+      role: "Student, Age 17",
     },
     {
-      quote: "As a parent, I appreciated the focus on responsible AI use. It's exactly what schools should be teaching.",
-      author: "Parent of 13-year-old",
-      role: "Pilot Cohort",
+      quote: "The small class size meant my shy daughter actually participated. She's now teaching her younger brother how to use ChatGPT responsibly. The ethics module was exactly what we needed.",
+      author: "David L.",
+      role: "Parent of 14-year-old",
     },
   ]
 
