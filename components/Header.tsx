@@ -3,7 +3,7 @@ export default function Header() {
     <header className="bg-white shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="font-bold text-xl text-gray-900">
-          AI4All
+          AI 4 All
         </div>
         <a
           href="#waitlist"
