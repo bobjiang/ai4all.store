@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Learn AI. Build Projects. Think Critically.
+          <span className="text-[#2563EB]">Learn</span> AI. <span className="text-[#22C55E]">Build</span> Projects. <span className="text-[#A855F7]">Think</span> Critically.
         </h1>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
           A 25-hour camp for teens (13-18) to master AI fundamentals, experiment with machine learning, and create a portfolio project — zero coding experience required.
