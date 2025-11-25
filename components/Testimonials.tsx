@@ -40,6 +40,19 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <a
+            href="#waitlist"
+            className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:from-orange-600 hover:to-pink-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            Secure Your Spot Now
+          </a>
+          <p className="mt-3 text-sm text-gray-600">
+            <span className="font-semibold text-orange-600">Join these successful students</span> • 50% off for first 6
+          </p>
+        </div>
       </div>
     </section>
   )
