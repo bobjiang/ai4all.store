@@ -79,9 +79,9 @@ Bold and premium. Executive education aesthetic. Dark backgrounds with vibrant g
 ### 1. Header
 
 - Logo: "AI4All" text or logo mark, left-aligned
-- Nav links: Courses, FAQ, Contact — horizontally aligned, right side
-- CTA button: "Book Now" with gradient background, right-most
-- Sticky/fixed on scroll
+- Nav links: Courses (`href="#courses"`), FAQ (`href="#faq"`), Contact (`mailto:bob@ai4all.store`) — horizontally aligned, right side
+- CTA button: "Book Now" (`href="#courses"`) with gradient background, right-most
+- `position: sticky` with `top: 0` and `z-index: 50` on scroll
 - Dark background matching hero
 
 ### 2. Hero
@@ -96,14 +96,14 @@ Bold and premium. Executive education aesthetic. Dark backgrounds with vibrant g
 
 ### 3. Value Proposition
 
-Four outcomes in a 2x2 or 4-column grid:
+Four outcomes in a responsive grid: 1-column on mobile, 2-column on tablet (md), 4-column on desktop (lg):
 
 1. **Ship Real Products** — "Deploy working web applications from idea to live URL in hours"
 2. **Direct AI, Don't Code** — "Learn to manage AI coding tools like a product leader manages a team"
 3. **Master the AI Workflow** — "Research, Plan, Implement, Test — the professional AI development loop"
 4. **Leave With a Toolkit** — "PRD templates, prompt library, context engineering frameworks you'll use forever"
 
-Each item: icon (simple, monoline) + headline + one-line description. Dark card backgrounds with subtle border. Icons in gradient accent colors.
+Each item: inline SVG icon (simple, monoline, implementer's choice — no icon library dependency) + headline + one-line description. Dark card backgrounds with subtle border. Icons in gradient accent colors.
 
 ### 4. Course Tiers (Pricing)
 
@@ -148,7 +148,7 @@ Two-Day (16h) — accent: violet/pink (#c084fc → #f472b6)
 
 **Below cards:** "Up to 10 participants per class · 10+? Let's talk" with "Let's talk" as a contact link
 
-**Stripe integration:** Each card has its own Stripe Buy Button. Existing Stripe publishable key is reused. Three new buy button IDs will need to be created in Stripe dashboard for the three tiers.
+**Stripe integration:** Each card has its own Stripe Buy Button. Existing Stripe publishable key is reused. One shared Stripe JS script load for the entire `CourseTiers` component (not per-card). Stripe Buy Button IDs are hardcoded constants — use `PLACEHOLDER_HALF_DAY`, `PLACEHOLDER_FULL_DAY`, `PLACEHOLDER_TWO_DAY` during development. The site owner will create real buy buttons in the Stripe dashboard and replace these constants before deployment. No other code changes needed — just swap the ID strings.
 
 ### 5. Syllabus Comparison
 
@@ -180,7 +180,7 @@ Four audience profiles in a row/grid:
 3. **Solo Creators** — "You want to build and launch your own digital products"
 4. **Team Leaders** — "You want your team to leverage AI for faster product development"
 
-Each: icon or simple illustration + role title + one-liner.
+Each: inline SVG icon (simple, monoline, matching Value Proposition style) + role title + one-liner.
 
 Below the grid, a bold standalone line: **"No coding experience required."**
 
@@ -194,23 +194,23 @@ Expandable accordion, 7 questions:
 4. **Is the course available online?** — Yes. All three formats are available both in-person and online.
 5. **What will participants take away?** — A deployed working web application, plus reusable templates (PRD template, prompt library, CLAUDE.md configuration) and frameworks they'll keep using after the course.
 6. **What's the difference between the three formats?** — The Half-Day (4h) covers core AI building concepts and a first deployed app. The Full-Day (8h) adds professional dev environment setup, deeper prompt/context engineering, and a more complex build. The Two-Day (16h) adds production infrastructure — databases, authentication, testing, and monitored deployment.
-7. **What's the refund policy?** — [To be provided by client]
+7. **What's the refund policy?** — Full refund if cancelled 7 or more days before the workshop. No refunds for cancellations within 7 days, but you may transfer your booking to a future date.
 
-Styling: dark background, questions in white bold, answers in slate-400. Plus/minus or chevron toggle icon in accent color.
+Styling: dark background, questions in white bold, answers in slate-400. Chevron toggle icon in accent color (rotating on open/close).
 
 ### 8. Final CTA
 
 - Headline: "Ready to Build?" or similar — bold, white
 - Brief reinforcing line about the value
-- Three compact tier summaries (name + price) with individual "Book Now" buttons, or a single "Book a Workshop" button that scrolls to the pricing section
-- "Questions? Get in touch" contact link
+- A single "Book a Workshop" anchor link (`href="#courses"`) that smooth-scrolls to the Course Tiers section (which has `id="courses"`). Use `scroll-behavior: smooth` on the html element via Tailwind's `scroll-smooth` class.
+- "Questions? Get in touch" — `mailto:bob@ai4all.store`
 - Dark background, slightly different shade or with subtle gradient to differentiate from FAQ
 
 ### 9. Footer
 
-- Minimal: "© 2026 AI4All" + contact email/link
+- Minimal: "© 2026 AI4All" + `bob@ai4all.store` mailto link
 - Dark background (darkest shade)
-- No social links unless provided
+- No social links
 
 ## Metadata Updates
 
@@ -234,7 +234,7 @@ export const metadata: Metadata = {
 - No changes to tracking setup
 
 ### Removed
-- ConvertKit waitlist form (removed — no longer relevant)
+- ConvertKit waitlist form — remove all ConvertKit-related code, refs, and script loading. ConvertKit only exists in `components/FinalCTA.tsx` (the `waitlistRef`, Kit script, and associated markup)
 
 ## Tailwind Config Changes
 
