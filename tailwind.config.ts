@@ -9,11 +9,15 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
+          900: '#0f172a',
+          800: '#1e293b',
+          700: '#334155',
+        },
+        accent: {
+          blue: '#38bdf8',
+          purple: '#818cf8',
+          violet: '#c084fc',
+          pink: '#f472b6',
         },
       },
     },
