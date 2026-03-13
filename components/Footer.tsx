@@ -1,13 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-400 py-12 px-4">
+    <footer className="bg-primary-900 border-t border-primary-700/50 py-8 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <p className="font-bold text-white text-lg mb-2">AI 4 All</p>
-        <p className="text-sm mb-4">
-          AI education for the next generation
-        </p>
-        <p className="text-xs">
-          © {new Date().getFullYear()} AI 4 All. All rights reserved.
+        <p className="text-sm text-slate-500">
+          &copy; {new Date().getFullYear()} AI4All &middot;{' '}
+          <a href="mailto:bob@ai4all.store" className="text-slate-400 hover:text-white transition-colors">
+            bob@ai4all.store
+          </a>
         </p>
       </div>
     </footer>
