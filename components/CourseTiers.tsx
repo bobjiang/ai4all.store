@@ -1,10 +1,3 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
-import Script from 'next/script'
-
-const STRIPE_PUBLISHABLE_KEY = 'pk_live_51PjrbmRuO2Zel37KZFZIefEHwYeOlj9AACIghFQ9mKM7kZHuHsAgzHvyPrjo81hKebLMt0gitYNThPBt10T2C9Ku007cTyCy1U'
-
 const tiers = [
   {
     name: 'Half-Day',
@@ -15,7 +8,7 @@ const tiers = [
     gradientFrom: 'from-sky-400',
     gradientTo: 'to-indigo-400',
     labelColor: 'text-sky-400',
-    buyButtonId: 'PLACEHOLDER_HALF_DAY',
+    checkoutUrl: 'https://buy.stripe.com/4gMaEZboK7FsbbR4Oe0gw05',
     features: [
       'Ship a working app in the first 45 minutes',
       'AI-native mindset & Agent Manager model',
@@ -34,7 +27,7 @@ const tiers = [
     gradientFrom: 'from-indigo-400',
     gradientTo: 'to-violet-400',
     labelColor: 'text-indigo-400',
-    buyButtonId: 'PLACEHOLDER_FULL_DAY',
+    checkoutUrl: 'https://buy.stripe.com/7sY9AV2Se0d04Nt4Oe0gw06',
     features: [
       'Everything in Half-Day',
       'Full PRD & specification writing',
@@ -53,7 +46,7 @@ const tiers = [
     gradientFrom: 'from-violet-400',
     gradientTo: 'to-pink-400',
     labelColor: 'text-violet-400',
-    buyButtonId: 'PLACEHOLDER_TWO_DAY',
+    checkoutUrl: 'https://buy.stripe.com/9B65kF8cy5xkfs7gwW0gw07',
     features: [
       'Everything in Full-Day',
       'Rapid prototyping sprint (5 prototypes)',
@@ -66,29 +59,6 @@ const tiers = [
 ]
 
 export default function CourseTiers() {
-  const stripeRefs = useRef<(HTMLDivElement | null)[]>([])
-  const stripeLoaded = useRef(false)
-
-  function renderStripeButtons() {
-    if (stripeLoaded.current) return
-    stripeLoaded.current = true
-    tiers.forEach((tier, index) => {
-      const container = stripeRefs.current[index]
-      if (container && !container.hasChildNodes()) {
-        const btn = document.createElement('stripe-buy-button')
-        btn.setAttribute('buy-button-id', tier.buyButtonId)
-        btn.setAttribute('publishable-key', STRIPE_PUBLISHABLE_KEY)
-        container.appendChild(btn)
-      }
-    })
-  }
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && document.querySelector('script[src*="buy-button"]')) {
-      renderStripeButtons()
-    }
-  }, [])
-
   return (
     <section id="courses" className="py-20 px-4 bg-primary-800">
       <div className="max-w-6xl mx-auto">
@@ -100,7 +70,7 @@ export default function CourseTiers() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-          {tiers.map((tier, index) => (
+          {tiers.map((tier) => (
             <div
               key={tier.name}
               className={`rounded-xl p-8 text-center ${
@@ -135,10 +105,14 @@ export default function CourseTiers() {
                 ))}
               </ul>
 
-              <div
-                ref={(el) => { stripeRefs.current[index] = el }}
-                className="flex justify-center"
-              />
+              <a
+                href={tier.checkoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block w-full bg-gradient-to-r ${tier.gradientFrom} ${tier.gradientTo} text-slate-900 font-bold py-3 px-6 rounded-lg text-sm hover:opacity-90 transition-opacity`}
+              >
+                Book Now
+              </a>
             </div>
           ))}
         </div>
@@ -150,12 +124,6 @@ export default function CourseTiers() {
           </a>
         </p>
       </div>
-
-      <Script
-        src="https://js.stripe.com/v3/buy-button.js"
-        strategy="lazyOnload"
-        onLoad={renderStripeButtons}
-      />
     </section>
   )
 }
