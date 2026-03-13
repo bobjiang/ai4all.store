@@ -3,9 +3,9 @@ import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AI 4 All - AI Camp for High School Students',
-  description: 'A 25-hour AI camp for teens (13-18) to master AI fundamentals, experiment with machine learning, and create a portfolio project. Zero coding experience required.',
-  keywords: ['AI camp', 'AI course for teens', 'high school AI program', 'machine learning for teens', 'ChatGPT', 'artificial intelligence education'],
+  title: 'AI4All — AI-Native Product Building Workshops',
+  description: 'Intensive workshops for founders and product leaders. Learn to build and ship real software products using AI tools — no coding experience required. Half-day, full-day, and two-day formats available.',
+  keywords: ['AI workshop', 'AI product building', 'no-code AI', 'founder workshop', 'product manager training', 'AI development course', 'build with AI', 'AI-native development'],
 }
 
 export default function RootLayout({
