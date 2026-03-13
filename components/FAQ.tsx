@@ -47,8 +47,10 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div key={index} className="bg-primary-800 border border-primary-700 rounded-lg">
               <button
-                className="w-full px-6 py-4 text-left flex justify-between items-center"
+                className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-inset rounded-lg"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
                 <span className="font-semibold text-white">{faq.question}</span>
                 <svg
@@ -65,7 +67,7 @@ export default function FAQ() {
                 </svg>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-4">
+                <div className="px-6 pb-4" id={`faq-answer-${index}`} role="region">
                   <p className="text-slate-400 leading-relaxed">{faq.answer}</p>
                 </div>
               )}
