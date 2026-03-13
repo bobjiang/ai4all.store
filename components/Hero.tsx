@@ -2,40 +2,37 @@
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-4">
+    <section className="bg-gradient-to-b from-primary-900 to-primary-800 py-24 px-4">
       <div className="max-w-4xl mx-auto text-center">
-        {/* Early Bird Banner */}
-        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-6 py-3 rounded-full mb-6 shadow-lg animate-pulse">
-          <span className="text-2xl">🎉</span>
-          <span className="font-bold">Early Bird Special: First 6 Students Save 50%</span>
-          <span className="text-2xl">🎉</span>
-        </div>
-
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          <span className="text-[#2563EB]">Learn</span> AI. <span className="text-[#22C55E]">Build</span> Projects. <span className="text-[#A855F7]">Think</span> Critically.
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-          A 25-hour camp for teens (13-18) to master AI fundamentals, experiment with machine learning, and create a portfolio project — zero coding experience required.
+        <p className="text-xs uppercase tracking-[0.25em] text-sky-400 font-semibold mb-6">
+          For Founders &amp; Product Leaders
         </p>
 
-        {/* Promo Code Box */}
-        <div className="bg-white border-2 border-dashed border-orange-500 rounded-lg p-4 max-w-md mx-auto mb-6">
-          <p className="text-sm text-gray-600 mb-2">Use promo code at checkout:</p>
-          <div className="flex items-center justify-center gap-3">
-            <code className="text-2xl font-bold text-orange-600 bg-orange-50 px-4 py-2 rounded">AI4All</code>
-            <span className="text-sm text-gray-500">50% OFF</span>
-          </div>
-        </div>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+          From Idea to{' '}
+          <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            Shipped Product
+          </span>
+          {' '}in One Day
+        </h1>
+
+        <p className="text-lg text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Learn to direct AI coding tools to build real software. No programming
+          experience needed — just your product vision.
+        </p>
 
         <a
-          href="#waitlist"
-          className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:from-orange-600 hover:to-pink-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
+          href="#courses"
+          className="inline-block bg-gradient-to-r from-sky-400 to-indigo-400 text-slate-900 font-bold px-8 py-4 rounded-lg text-lg hover:from-sky-300 hover:to-indigo-300 transition-all shadow-lg shadow-sky-400/20"
         >
-          Secure Your Spot Now
+          Book a Workshop
         </a>
-        <p className="mt-4 text-sm text-gray-600">
-          <span className="font-semibold text-orange-600">Only 6 early bird spots available</span> • First Cohort: Jan 19-23, 2026
-        </p>
+
+        <div className="mt-6 flex justify-center gap-6 text-sm text-slate-500">
+          <span>&#10003; Half-Day</span>
+          <span>&#10003; Full-Day</span>
+          <span>&#10003; Two-Day</span>
+        </div>
       </div>
     </section>
   )
