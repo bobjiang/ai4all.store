@@ -7,70 +7,70 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Does my child need coding experience?",
-      answer: "No prior coding required. We start from zero and teach Python basics using guided Google Colab notebooks. By week 3, students write their own code with support.",
+      question: 'Do I need any coding experience?',
+      answer: 'No. The course is designed for non-technical professionals. You\'ll learn to direct AI tools to write code for you.',
     },
     {
-      question: "What's the difference between 5-day camp and 10-week course?",
-      answer: "Same 25-hour curriculum. The intensive camp (5 days, 5 hours/day) is great for school breaks. The 10-week course (2.5 hours/week) allows more time for homework and project development.",
+      question: 'What do participants need to bring?',
+      answer: 'A laptop with Chrome or Firefox and an internet connection. We provide all tools, templates, and accounts needed.',
     },
     {
-      question: "Will this help with college applications?",
-      answer: "Yes. Students earn a Certificate of Completion and build a portfolio project they can showcase. Admissions officers value demonstrated AI literacy and project-based learning.",
+      question: 'How many people can attend per class?',
+      answer: 'Up to 10 participants per class. For larger groups, contact us for custom pricing.',
     },
     {
-      question: "What if my child is shy or introverted?",
-      answer: "Small class sizes (8-12 students) and team projects (3-4 per group) create a supportive environment. Participation can be via chat, and we use pair programming so no one works alone.",
+      question: 'Is the course available online?',
+      answer: 'Yes. All three formats are available both in-person and online.',
     },
     {
-      question: "Is this safe? What about AI misuse?",
-      answer: "Safety is core to our curriculum. Module 9 is dedicated to AI ethics — bias, privacy, misinformation. We teach responsible use, not just technical skills. Parents receive progress updates.",
+      question: 'What will participants take away?',
+      answer: 'A deployed working web application, plus reusable templates (PRD template, prompt library, CLAUDE.md configuration) and frameworks they\'ll keep using after the course.',
     },
     {
-      question: "What's your refund policy?",
-      answer: "Full refund within 7 days of the first session. We also offer free rescheduling to a future cohort if timing doesn't work out.",
+      question: 'What\'s the difference between the three formats?',
+      answer: 'The Half-Day (4h) covers core AI building concepts and a first deployed app. The Full-Day (8h) adds professional dev environment setup, deeper prompt/context engineering, and a more complex build. The Two-Day (16h) adds production infrastructure — databases, authentication, testing, and monitored deployment.',
+    },
+    {
+      question: 'What\'s the refund policy?',
+      answer: 'Full refund if cancelled 7 or more days before the workshop. No refunds for cancellations within 7 days, but you may transfer your booking to a future date.',
     },
   ]
 
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section id="faq" className="py-20 px-4 bg-primary-900">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-white mb-12 tracking-tight">
           Frequently Asked Questions
         </h2>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-sm">
+            <div key={index} className="bg-primary-800 border border-primary-700 rounded-lg">
               <button
                 className="w-full px-6 py-4 text-left flex justify-between items-center"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-medium text-gray-900">{faq.question}</span>
-                <span className="text-gray-500 text-xl">
-                  {openIndex === index ? '−' : '+'}
-                </span>
+                <span className="font-semibold text-white">{faq.question}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`w-5 h-5 text-indigo-400 transition-transform flex-shrink-0 ml-4 ${
+                    openIndex === index ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-4">
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <p className="text-slate-400 leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </div>
           ))}
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center mt-12">
-          <a
-            href="#waitlist"
-            className="inline-block bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:from-orange-600 hover:to-pink-600 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
-            Secure Your Spot Now
-          </a>
-          <p className="mt-3 text-sm text-gray-600">
-            <span className="font-semibold text-orange-600">Still have questions?</span> Enroll now and we'll answer everything
-          </p>
         </div>
       </div>
     </section>
