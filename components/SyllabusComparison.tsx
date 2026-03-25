@@ -2,15 +2,19 @@ const rows = [
   { topic: 'First AI-built app deployment', halfDay: '✓', fullDay: '✓', twoDay: '✓' },
   { topic: 'Agent Manager mindset', halfDay: '✓', fullDay: '✓', twoDay: '✓' },
   { topic: 'Prompt engineering', halfDay: '3 techniques', fullDay: '5 techniques', twoDay: '5 techniques' },
-  { topic: 'Context engineering', halfDay: '✓', fullDay: '✓', twoDay: '✓ + deeper lab' },
+  { topic: 'Context engineering', halfDay: 'Essentials', fullDay: 'Intermediate', twoDay: 'Advanced + lab' },
   { topic: 'PRD / specification writing', halfDay: 'Lite', fullDay: 'Full', twoDay: 'Full + iteration' },
   { topic: 'AI-first dev environment (Cursor, Git)', halfDay: '—', fullDay: '✓', twoDay: '✓' },
+  { topic: 'Version control & collaboration (Git/GitHub)', halfDay: '—', fullDay: '✓', twoDay: '✓' },
+  { topic: 'Multi-page app architecture', halfDay: '—', fullDay: '✓', twoDay: '✓' },
   { topic: 'Rapid prototyping sprint', halfDay: '—', fullDay: '—', twoDay: '5 prototypes' },
-  { topic: 'Database & authentication', halfDay: '—', fullDay: '—', twoDay: '✓' },
-  { topic: 'Payment processing (Stripe)', halfDay: '—', fullDay: '—', twoDay: 'Stretch goal' },
+  { topic: 'Database & authentication (Supabase)', halfDay: '—', fullDay: '—', twoDay: '✓' },
+  { topic: 'Payment processing (Stripe)', halfDay: '—', fullDay: '—', twoDay: '✓' },
+  { topic: 'API integrations & webhooks', halfDay: '—', fullDay: '—', twoDay: '✓' },
   { topic: 'Multi-agent coordination', halfDay: '—', fullDay: '—', twoDay: '✓' },
   { topic: 'Automated testing / QA', halfDay: '—', fullDay: 'Manual only', twoDay: '3-layer approach' },
-  { topic: 'Production deployment & monitoring', halfDay: '—', fullDay: '—', twoDay: '✓' },
+  { topic: 'Production deployment & monitoring', halfDay: '—', fullDay: 'Basic (Vercel)', twoDay: 'Full + CI/CD' },
+  { topic: 'Take-home templates & prompt library', halfDay: '✓', fullDay: '✓', twoDay: '✓' },
 ]
 
 function CellContent({ value }: { value: string }) {
@@ -35,9 +39,9 @@ export default function SyllabusComparison() {
             <thead>
               <tr className="border-b border-primary-700">
                 <th className="py-3 px-4 text-sm font-semibold text-slate-400">Topic</th>
-                <th className="py-3 px-4 text-sm font-semibold text-sky-400 text-center">Half-Day (4h)</th>
-                <th className="py-3 px-4 text-sm font-semibold text-indigo-400 text-center">Full-Day (8h)</th>
-                <th className="py-3 px-4 text-sm font-semibold text-violet-400 text-center">Two-Day (16h)</th>
+                <th className="py-3 px-4 text-sm font-semibold text-sky-400 text-center">Half-Day</th>
+                <th className="py-3 px-4 text-sm font-semibold text-indigo-400 text-center">Full-Day</th>
+                <th className="py-3 px-4 text-sm font-semibold text-violet-400 text-center">Two-Day</th>
               </tr>
             </thead>
             <tbody>
