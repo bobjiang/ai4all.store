@@ -15,8 +15,8 @@ export default function FAQ() {
       answer: 'A laptop with Chrome or Firefox and an internet connection. We provide all tools, templates, and accounts needed.',
     },
     {
-      question: 'How many people can attend per class?',
-      answer: 'Up to 10 participants per class. For larger groups, contact us for custom pricing.',
+      question: 'Is registration per person or per group?',
+      answer: 'Each registration is for one person. We schedule workshop dates based on demand — book your spot and we\'ll confirm the date with you.',
     },
     {
       question: 'Is the course available online?',
@@ -28,11 +28,11 @@ export default function FAQ() {
     },
     {
       question: 'What\'s the difference between the three formats?',
-      answer: 'The Half-Day (4h) covers core AI building concepts and a first deployed app. The Full-Day (8h) adds professional dev environment setup, deeper prompt/context engineering, and a more complex build. The Two-Day (16h) adds production infrastructure — databases, authentication, testing, and monitored deployment.',
+      answer: 'The Half-Day covers core AI building concepts and a first deployed app. The Full-Day adds professional dev environment setup, deeper prompt/context engineering, and a more complex build. The Two-Day adds production infrastructure — databases, authentication, payments, testing, and monitored deployment.',
     },
     {
       question: 'What\'s the refund policy?',
-      answer: 'Full refund if cancelled 7 or more days before the workshop. No refunds for cancellations within 7 days, but you may transfer your booking to a future date.',
+      answer: 'Full refund if cancelled 7 or more days before the workshop. No refunds for cancellations within 7 days, but you may transfer your registration to a future date.',
     },
   ]
 
