@@ -5,7 +5,7 @@ const rows = [
   { topic: 'Context engineering', halfDay: 'Essentials', fullDay: 'Intermediate', twoDay: 'Advanced + lab' },
   { topic: 'PRD / specification writing', halfDay: 'Lite', fullDay: 'Full', twoDay: 'Full + iteration' },
   { topic: 'AI-first dev environment (Cursor, Git)', halfDay: '—', fullDay: '✓', twoDay: '✓' },
-  { topic: 'Version control & collaboration (Git/GitHub)', halfDay: '—', fullDay: '✓', twoDay: '✓' },
+  { topic: 'Version control & collaboration (Git/GitHub)', halfDay: '✓', fullDay: '✓', twoDay: '✓' },
   { topic: 'Multi-page app architecture', halfDay: '—', fullDay: '✓', twoDay: '✓' },
   { topic: 'Rapid prototyping sprint', halfDay: '—', fullDay: '—', twoDay: '5 prototypes' },
   { topic: 'Database & authentication (Supabase)', halfDay: '—', fullDay: '—', twoDay: '✓' },
@@ -13,7 +13,9 @@ const rows = [
   { topic: 'API integrations & webhooks', halfDay: '—', fullDay: '—', twoDay: '✓' },
   { topic: 'Multi-agent coordination', halfDay: '—', fullDay: '—', twoDay: '✓' },
   { topic: 'Automated testing / QA', halfDay: '—', fullDay: 'Manual only', twoDay: '3-layer approach' },
-  { topic: 'Production deployment & monitoring', halfDay: '—', fullDay: 'Basic (Vercel)', twoDay: 'Full + CI/CD' },
+  { topic: 'Production deployment & monitoring (Vercel)', halfDay: '✓', fullDay: 'Basic', twoDay: 'Full + CI/CD' },
+  { topic: 'Claude Code skills', halfDay: '✓', fullDay: '✓', twoDay: '✓' },
+  { topic: 'Idea brainstorming', halfDay: '✓', fullDay: '✓', twoDay: '✓' },
   { topic: 'Take-home templates & prompt library', halfDay: '✓', fullDay: '✓', twoDay: '✓' },
 ]
 
