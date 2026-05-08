@@ -8,6 +8,7 @@ const tiers = [
     gradientTo: 'to-indigo-400',
     labelColor: 'text-sky-400',
     checkoutUrl: 'https://buy.stripe.com/6oU4gB3Wi7Fs5Rxa8y0gw08',
+    detailsUrl: '/half-day',
     features: [
       'Ship a working app in the first 45 minutes',
       'AI-native mindset & Agent Manager model',
@@ -26,6 +27,7 @@ const tiers = [
     gradientTo: 'to-violet-400',
     labelColor: 'text-indigo-400',
     checkoutUrl: 'https://buy.stripe.com/3cI14p3WiaREa7NbcC0gw09',
+    detailsUrl: null,
     features: [
       'Everything in Half-Day',
       'Full PRD & specification writing',
@@ -44,6 +46,7 @@ const tiers = [
     gradientTo: 'to-pink-400',
     labelColor: 'text-violet-400',
     checkoutUrl: 'https://buy.stripe.com/dRm28takGbVI1Bh3Ka0gw0a',
+    detailsUrl: null,
     features: [
       'Everything in Full-Day',
       'Rapid prototyping sprint (5 prototypes)',
@@ -109,6 +112,15 @@ export default function CourseTiers() {
               >
                 Book Now
               </a>
+
+              {tier.detailsUrl && (
+                <a
+                  href={tier.detailsUrl}
+                  className={`block mt-3 text-xs ${tier.labelColor} hover:underline`}
+                >
+                  Learn more about {tier.name} &rarr;
+                </a>
+              )}
             </div>
           ))}
         </div>
