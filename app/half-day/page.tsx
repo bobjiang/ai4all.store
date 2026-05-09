@@ -570,8 +570,8 @@ export default function HalfDayPage() {
             <span className="eyebrow">Schedule</span>
             <h2>One day. Eight modules. One artifact you keep.</h2>
             <p>
-              Every module ends in a tangible output. The day ends with a 30-day adoption plan you
-              commit to in writing.
+              10:00 to 16:00. Every module ends in a tangible output. The day closes with a 30-day
+              adoption plan you commit to in writing.
             </p>
           </div>
           <div className="schedule">
@@ -581,59 +581,54 @@ export default function HalfDayPage() {
               <div>Output</div>
             </div>
             <div className="schedule-row">
-              <div className="time">09:00&ndash;09:45</div>
+              <div className="time">10:00&ndash;10:30</div>
               <div className="module">Opening &amp; AI fluency foundations</div>
               <div className="output">Pre-quiz &amp; task delegation map</div>
             </div>
             <div className="schedule-row">
-              <div className="time">09:45&ndash;10:15</div>
+              <div className="time">10:30&ndash;11:00</div>
               <div className="module">Tour of ChatGPT &amp; Claude</div>
               <div className="output">Tool comparison notes</div>
             </div>
             <div className="schedule-row">
-              <div className="time">10:15&ndash;11:00</div>
+              <div className="time">11:00&ndash;11:45</div>
               <div className="module">Prompt engineering 101</div>
               <div className="output">Structured investor-update prompt</div>
             </div>
             <div className="schedule-row break">
-              <div className="time">11:00&ndash;11:15</div>
+              <div className="time">11:45&ndash;12:00</div>
               <div className="module">Break</div>
               <div className="output">&mdash;</div>
             </div>
             <div className="schedule-row">
-              <div className="time">11:15&ndash;12:30</div>
+              <div className="time">12:00&ndash;13:00</div>
               <div className="module">Founder use cases: strategy &amp; ops</div>
               <div className="output">One polished founder artifact</div>
             </div>
             <div className="schedule-row break">
-              <div className="time">12:30&ndash;13:30</div>
+              <div className="time">13:00&ndash;13:30</div>
               <div className="module">Lunch</div>
               <div className="output">&mdash;</div>
             </div>
             <div className="schedule-row">
-              <div className="time">13:30&ndash;14:45</div>
+              <div className="time">13:30&ndash;14:15</div>
               <div className="module">Working with documents &amp; data</div>
               <div className="output">Three business questions answered from CSV</div>
             </div>
             <div className="schedule-row">
-              <div className="time">14:45&ndash;15:30</div>
+              <div className="time">14:15&ndash;15:00</div>
               <div className="module">Advanced techniques &amp; iterative refinement</div>
               <div className="output">Prompt chain for market research</div>
             </div>
             <div className="schedule-row">
-              <div className="time">15:30&ndash;16:15</div>
+              <div className="time">15:00&ndash;15:30</div>
               <div className="module">Data safety, failure modes &amp; bias</div>
               <div className="output">AI risk &amp; incident-response checklist</div>
             </div>
             <div className="schedule-row">
-              <div className="time">16:15&ndash;16:45</div>
-              <div className="module">AI-enhanced workflows</div>
-              <div className="output">30-day workflow adoption plan</div>
-            </div>
-            <div className="schedule-row">
-              <div className="time">16:45&ndash;17:30</div>
-              <div className="module">Wrap-up, evaluation &amp; next steps</div>
-              <div className="output">Post-quiz, final artifact share-out</div>
+              <div className="time">15:30&ndash;16:00</div>
+              <div className="module">Wrap-up, AI workflows &amp; 30-day plan</div>
+              <div className="output">30-day adoption plan &amp; artifact share-out</div>
             </div>
           </div>
         </section>
