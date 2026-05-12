@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description:
       'A 1-day workshop. ChatGPT + Claude. Live demos, paired practice, real founder artifacts.',
     type: 'website',
-    url: 'https://www.ai4all.store/half-day',
+    url: 'https://www.ai4all.store/course-1',
   },
 }
 
