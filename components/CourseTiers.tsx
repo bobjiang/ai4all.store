@@ -8,7 +8,7 @@ const tiers = [
     gradientTo: 'to-indigo-400',
     labelColor: 'text-sky-400',
     checkoutUrl: 'https://buy.stripe.com/6oU4gB3Wi7Fs5Rxa8y0gw08',
-    detailsUrl: '/half-day',
+    detailsUrl: '/course-1',
     features: [
       'Ship a working app in the first 45 minutes',
       'AI-native mindset & Agent Manager model',

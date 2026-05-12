@@ -19,8 +19,8 @@ FONTS_DIR = os.path.expanduser(
 )
 OUTPUT_PDF = os.path.join(SCRIPT_DIR, "ai4all-halfday-poster.pdf")
 
-LANDING_URL = "https://www.ai4all.store/half-day"
-DISPLAY_URL = "ai4all.store/half-day"
+LANDING_URL = "https://www.ai4all.store/course-1"
+DISPLAY_URL = "ai4all.store/course-1"
 
 # --- Register fonts ---
 pdfmetrics.registerFont(TTFont("Outfit-Bold", os.path.join(FONTS_DIR, "Outfit-Bold.ttf")))
