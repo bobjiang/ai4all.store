@@ -9,12 +9,12 @@ monumental headline; geometric mono (GeistMono) for the small metadata.
 
 import os
 
-import qrcode
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 # ---------- Paths ----------
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_PNG = os.path.join(SCRIPT_DIR, "ai4all-xiaohongshu-cover.png")
+QR_IMG = os.path.join(SCRIPT_DIR, "wechat-qr.png")
 
 CANVAS_FONTS = os.path.expanduser(
     "~/.claude/plugins/cache/anthropic-agent-skills/document-skills/69c0b1a06741/skills/canvas-design/canvas-fonts"
@@ -107,12 +107,15 @@ def draw_centered(draw, y, s, font, fill):
 
 
 # ---------- QR ----------
-def make_qr(url, px):
-    qr = qrcode.QRCode(version=1, error_correction=qrcode.constants.ERROR_CORRECT_H, box_size=10, border=2)
-    qr.add_data(url)
-    qr.make(fit=True)
-    img = qr.make_image(fill_color=(15, 23, 42), back_color=(255, 255, 255)).convert("RGB")
-    return img.resize((px, px), Image.LANCZOS)
+def load_qr(path, px):
+    """Load the supplied QR, trim its own white border so the code fills
+    the card tightly, then square it to `px`."""
+    im = Image.open(path).convert("RGB")
+    mask = im.convert("L").point(lambda v: 0 if v > 240 else 255)
+    bbox = mask.getbbox()
+    if bbox:
+        im = im.crop(bbox)
+    return im.resize((px, px), Image.LANCZOS)
 
 
 # ---------- Build ----------
@@ -231,10 +234,16 @@ def build():
 
     # ===== PRICING + QR =====
     panel_top = bottom_div_y + 26
-    panel_h = 200
+    panel_h = 224
+
+    # QR is a square card on the right — sized to the code, not floating in
+    # a wide rectangle. Price panel absorbs the freed width.
+    PANEL_GAP = 28
+    qr_box_w = panel_h
+    qr_box_x = (W - MARGIN) - qr_box_w
 
     # Price panel (left)
-    price_w = int((W - 2 * MARGIN) * 0.58) - 14
+    price_w = qr_box_x - PANEL_GAP - MARGIN
     price_box = (MARGIN, panel_top, MARGIN + price_w, panel_top + panel_h)
     # Subtle inner luminance — a second hairline just inside
     round_rect(draw, price_box, 18, fill=BG_PANEL, outline=(56, 189, 248, 110), width=1)
@@ -270,20 +279,20 @@ def build():
     draw.text((px + 24, scar_y), "6 小时 → 带走一个能演示的产品",
               font=pf(23, PF_SC_SEMIBOLD), fill=EMERALD)
 
-    # QR panel (right) — larger QR, less padding
-    qr_box_x = MARGIN + price_w + 24
-    qr_box_w = (W - MARGIN) - qr_box_x
+    # QR panel (right) — square card, QR fills it edge-to-edge
     qr_box = (qr_box_x, panel_top, qr_box_x + qr_box_w, panel_top + panel_h)
     round_rect(draw, qr_box, 18, fill=WHITE)
-    qr_inner = min(qr_box_w - 28, panel_h - 56)
-    qr_img = make_qr("https://buy.stripe.com/6oU4gB3Wi7Fs5Rxa8y0gw08", qr_inner)
-    qr_x = qr_box_x + (qr_box_w - qr_inner) // 2
-    qr_y = panel_top + 16
-    img.paste(qr_img, (qr_x, qr_y))
     qr_label = "扫码立即报名"
     qr_label_font = pf(20, PF_SC_MEDIUM)
+    label_h = text_h(draw, qr_label, qr_label_font)
+    pad = 14
+    qr_inner = min(qr_box_w - 2 * pad, panel_h - pad - label_h - 16)
+    qr_img = load_qr(QR_IMG, qr_inner)
+    qr_x = qr_box_x + (qr_box_w - qr_inner) // 2
+    qr_y = panel_top + pad
+    img.paste(qr_img, (qr_x, qr_y))
     lw = text_w(draw, qr_label, qr_label_font)
-    draw.text((qr_box_x + (qr_box_w - lw) // 2, qr_y + qr_inner + 6),
+    draw.text((qr_box_x + (qr_box_w - lw) // 2, qr_y + qr_inner + 4),
               qr_label, font=qr_label_font, fill=(15, 23, 42))
 
     # ===== HASHTAGS =====
