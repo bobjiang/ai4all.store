@@ -138,48 +138,50 @@ def build():
 
     # ===== EYEBROW + TAG =====
     eyebrow_font = latin("GeistMono-Regular.ttf", 22)
-    eyebrow = "FOR FOUNDERS  ·  PRODUCT LEADERS"
+    eyebrow = "FOR NON-TECH FOUNDERS  ·  PRODUCT LEADERS"
     draw_centered(draw, 92, eyebrow, eyebrow_font, SKY_400)
 
     cn_tag_font = pf(28, PF_SC_REGULAR)
-    draw_centered(draw, 132, "创始人 · 产品负责人 · 半天动手工作坊", cn_tag_font, SLATE_300)
+    draw_centered(draw, 132, "非技术创始人 · 产品负责人 · 6 小时实战工作坊", cn_tag_font, SLATE_300)
 
     # ===== HEADLINE =====
-    # Tighter rhythm: three lines read as one breath.
-    h_big = pf(146, PF_SC_SEMIBOLD)
-    h_mid = pf(112, PF_SC_SEMIBOLD)
-    ai_font = latin("Outfit-Bold.ttf", 124)
-    yong_font = pf(112, PF_SC_SEMIBOLD)
+    # Founder-facing rhythm: pain, outcome, asset.
+    h_top = pf(102, PF_SC_SEMIBOLD)
+    h_big = pf(138, PF_SC_SEMIBOLD)
+    you_font = pf(82, PF_SC_SEMIBOLD)
+    mvp_font = latin("Outfit-Bold.ttf", 112)
 
-    # Line 1: "半天" (indigo accent) + gap + "打造" (white)
-    line1_y = 206
-    t1a, t1b = "半天", "打造"
+    # Line 1: "不会写代码"
+    line1_y = 214
+    draw_centered(draw, line1_y, "不会写代码", h_top, WHITE)
+
+    # Line 2: "当天" (indigo accent) + gap + "上线" (white)
+    line2_y = line1_y + 116
+    t1a, t1b = "当天", "上线"
     w_1a = text_w(draw, t1a, h_big)
     w_1b = text_w(draw, t1b, h_big)
     gap = 44
     block_w = w_1a + gap + w_1b
     x1 = (W - block_w) / 2
-    draw.text((x1, line1_y), t1a, font=h_big, fill=INDIGO_400)
-    draw.text((x1 + w_1a + gap, line1_y), t1b, font=h_big, fill=WHITE)
+    draw.text((x1, line2_y), t1a, font=h_big, fill=INDIGO_400)
+    draw.text((x1 + w_1a + gap, line2_y), t1b, font=h_big, fill=WHITE)
 
-    # Line 2: "你的第一个"
-    line2_y = line1_y + 138
-    draw_centered(draw, line2_y, "你的第一个", h_mid, WHITE)
-
-    # Line 3: "AI 应用"
-    line3_y = line2_y + 122
-    ai_w = text_w(draw, "AI", ai_font)
-    yong_w = text_w(draw, "应用", yong_font)
+    # Line 3: "你的 AI MVP"
+    line3_y = line2_y + 138
+    you_text = "你的"
+    mvp_text = "AI MVP"
+    you_w = text_w(draw, you_text, you_font)
+    mvp_w = text_w(draw, mvp_text, mvp_font)
     gap3 = 26
-    block3_w = ai_w + gap3 + yong_w
+    block3_w = you_w + gap3 + mvp_w
     x3 = (W - block3_w) / 2
-    draw.text((x3, line3_y - 6), "AI", font=ai_font, fill=VIOLET_400)
-    draw.text((x3 + ai_w + gap3, line3_y), "应用", font=yong_font, fill=WHITE)
+    draw.text((x3, line3_y + 8), you_text, font=you_font, fill=WHITE)
+    draw.text((x3 + you_w + gap3, line3_y - 2), mvp_text, font=mvp_font, fill=VIOLET_400)
 
     # ===== SUBTITLE =====
-    sub_y = line3_y + 156
+    sub_y = line3_y + 150
     sub_font = pf(32, PF_SC_REGULAR)
-    draw_centered(draw, sub_y, "0 基础  ·  全程动手  ·  下午茶前直接上线", sub_font, SLATE_300)
+    draw_centered(draw, sub_y, "0 基础  ·  全程动手  ·  结束前拿到可分享链接", sub_font, SLATE_300)
 
     # ===== DIVIDER 1 =====
     div1_y = sub_y + 64
@@ -189,7 +191,7 @@ def build():
     dt_y = div1_y + 30
     draw_centered(draw, dt_y, "SATURDAY  ·  JUNE  6", latin("GeistMono-Regular.ttf", 22), SKY_400)
     draw_centered(draw, dt_y + 38, "2026 年 6 月 6 日 · 周六", pf(38, PF_SC_MEDIUM), WHITE)
-    draw_centered(draw, dt_y + 92, "10:00 AM  —  2:00 PM", latin("GeistMono-Bold.ttf", 34), SKY_400)
+    draw_centered(draw, dt_y + 92, "10:00 AM  —  4:00 PM", latin("GeistMono-Bold.ttf", 34), SKY_400)
 
     # ===== DIVIDER 2 =====
     div2_y = dt_y + 152
@@ -197,17 +199,17 @@ def build():
 
     # ===== SECTION HEADING =====
     sect_y = div2_y + 26
-    draw_centered(draw, sect_y, "WHAT  YOU'LL  BUILD  &  LEARN", latin("GeistMono-Regular.ttf", 22), VIOLET_400)
-    draw_centered(draw, sect_y + 34, "半天带走的硬核能力", pf(30, PF_SC_MEDIUM), SLATE_300)
+    draw_centered(draw, sect_y, "WHAT  YOU'LL  SHIP", latin("GeistMono-Regular.ttf", 22), VIOLET_400)
+    draw_centered(draw, sect_y + 34, "非技术创始人带走的结果", pf(30, PF_SC_MEDIUM), SLATE_300)
 
     # ===== FEATURES GRID =====
     features = [
-        ("亲手上线一个能跑的应用", "45 分钟内见到雏形"),
-        ("3 个核心 Prompt 技巧", "让 AI 真正听懂你的需求"),
-        ("Context Engineering 入门", "AI-First 开发的底层心法"),
-        ("Claude Code Skills 实战", "构建你的 AI 开发工作流"),
-        ("用 AI 头脑风暴产品想法", "从模糊愿景到清晰 PRD"),
-        ("Git/GitHub + Vercel 部署", "从版本控制到公网上线"),
+        ("把想法整理成清晰 PRD", "先定用户、场景、功能边界"),
+        ("写出 AI 听得懂的需求", "3 个 prompt 让结果不跑偏"),
+        ("亲手做出可点击 MVP", "不是截图，是能跑的应用"),
+        ("像管理开发一样管理 AI", "你定方向、约束和验收"),
+        ("现场上线成可分享链接", "结束前可扫码打开演示"),
+        ("复用你的 AI 产品工作流", "下个想法不用从零摸索"),
     ]
     grid_y = sect_y + 96
     row_h = 96
@@ -240,22 +242,33 @@ def build():
     round_rect(draw, inner, 16, outline=(56, 189, 248, 28), width=1)
 
     px = MARGIN + 28
-    draw.text((px, panel_top + 22), "个人报名 · INDIVIDUAL", font=latin("GeistMono-Regular.ttf", 17), fill=SLATE_400)
 
-    # Price value — baseline-aligned "/ 人"
-    price_font = latin("Outfit-Bold.ttf", 86)
-    draw.text((px, panel_top + 44), "$799", font=price_font, fill=WHITE)
-    price_w_val = text_w(draw, "$799", price_font)
-    draw.text((px + price_w_val + 14, panel_top + 100), "/ 人",
-              font=pf(22, PF_SC_REGULAR), fill=SLATE_500)
+    # Eyebrow — the offer's reason for existing (scarcity), stated up front
+    draw.text((px, panel_top + 20), "创始人早鸟 · 前 20 席 5 折",
+              font=pf(22, PF_SC_MEDIUM), fill=SLATE_300)
 
-    # Promo line — single tight row, code in violet for chromatic echo
-    promo_y = panel_top + 148
-    draw.text((px, promo_y), "CODE", font=latin("GeistMono-Bold.ttf", 18), fill=SKY_400)
-    draw.text((px + 64, promo_y - 7), "AI4ALL", font=latin("Outfit-Bold.ttf", 28), fill=VIOLET_400)
-    arrow_x = px + 64 + text_w(draw, "AI4ALL", latin("Outfit-Bold.ttf", 28)) + 18
-    draw.text((arrow_x, promo_y - 3), "→  立省 50%  $399.50",
-              font=pf(22, PF_SC_SEMIBOLD), fill=EMERALD)
+    # The drop — discounted price as the monumental gesture
+    price_font = latin("Outfit-Bold.ttf", 82)
+    price_y = panel_top + 56
+    draw.text((px, price_y), "$399", font=price_font, fill=WHITE)
+    price_w_val = text_w(draw, "$399", price_font)
+    rx = px + price_w_val + 20
+
+    # Anchor — original price, struck, small + muted, riding the price's shoulder
+    strike_font = latin("Outfit-Bold.ttf", 30)
+    strike_y0 = price_y + 4
+    draw.text((rx, strike_y0), "$799", font=strike_font, fill=SLATE_500)
+    sb_l, sb_t, sb_r, sb_b = draw.textbbox((rx, strike_y0), "$799", font=strike_font)
+    strike_mid = (sb_t + sb_b) // 2
+    draw.line([(sb_l - 3, strike_mid), (sb_r + 3, strike_mid)], fill=SLATE_400, width=3)
+    draw.text((rx, price_y + 48), "原价 / 人",
+              font=pf(20, PF_SC_REGULAR), fill=SLATE_500)
+
+    # Scarcity line — emerald is the value moment, spent once, here.
+    scar_y = panel_top + 150
+    draw.ellipse([px, scar_y + 8, px + 11, scar_y + 19], fill=EMERALD)
+    draw.text((px + 24, scar_y), "6 小时 → 带走一个能演示的产品",
+              font=pf(23, PF_SC_SEMIBOLD), fill=EMERALD)
 
     # QR panel (right) — larger QR, less padding
     qr_box_x = MARGIN + price_w + 24
@@ -276,7 +289,7 @@ def build():
     # ===== HASHTAGS =====
     tag_y = panel_top + panel_h + 28
     tags_font = pf(22, PF_SC_MEDIUM)
-    draw_centered(draw, tag_y, "#AI编程  #Vibe Coding  #Claude Code  #创始人必看", tags_font, SLATE_400)
+    draw_centered(draw, tag_y, "#非技术创始人  #AI产品  #MVP  #Claude Code", tags_font, SLATE_400)
 
     # ===== BOTTOM STRIPE =====
     bar_y = H - 60
