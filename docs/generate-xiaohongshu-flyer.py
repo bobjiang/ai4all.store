@@ -244,7 +244,7 @@ def build():
     px = MARGIN + 28
 
     # Eyebrow — the offer's reason for existing (scarcity), stated up front
-    draw.text((px, panel_top + 20), "创始人早鸟 · 前 20 席 5 折",
+    draw.text((px, panel_top + 20), "早鸟价 · 前 10 席 5 折",
               font=pf(22, PF_SC_MEDIUM), fill=SLATE_300)
 
     # The drop — discounted price as the monumental gesture
